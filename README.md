@@ -1,6 +1,5 @@
 <p align="center"><img src="readme-resources/kirbit-logo.png" width="400"></p>
 
-
 ## O kirbicie
 
 Kirbit to klon reddita wykonany w oparciu o:
@@ -13,7 +12,7 @@ Kirbit to klon reddita wykonany w oparciu o:
 
 ## Funkcjonalności
 
-- Rejestracja i logowanie użytkowników
+- Rejestracja i logowanie użytkowników(Breeze)
 - Tworzenie społeczności
 - Tworzenie postów dla danej społeczności
 - Komentowanie postów
@@ -22,6 +21,7 @@ Kirbit to klon reddita wykonany w oparciu o:
 - Edycja postów
 - Usuwanie społeczności
 - Edycja społeczności
+- Walidacja(Breeze)
 
 ## Wygląd strony
 
@@ -44,7 +44,6 @@ Kirbit to klon reddita wykonany w oparciu o:
 ### Tworzenie posta
 
 <img src="readme-resources/createpostpage.png" width="700">
-
 
 ## Co może użykownik?
 
@@ -70,4 +69,57 @@ Kirbit to klon reddita wykonany w oparciu o:
 - Usunąć każdy post
 - Usunąć każde community
 
+## Użyte modele
 
+### Komentarz
+
+- id użytkownika
+- id posta
+- zawartość komentarza
+
+### Społeczność
+
+- id użytkownika
+- nazwa społeczności
+- opis
+- slug
+
+### Post
+
+- id użytkownika
+- id społeczności
+- slug
+- opis
+- url
+- głosy
+
+### Głos dla posta
+
+- id użytkownika
+- id posta
+- dany głos
+
+### Użytkownik
+
+- imię
+- nazwa użytkownika
+- email
+- hasło
+
+## Jak uruchomić projekt?
+
+### Przed pierwszym uruchomieniem
+
+- w bazie danych (najlepiej phpmyadmin xampp) stworzyć bazę `'rered'`
+- w Terminalu przejść do ścieżki z projektem
+- wykonać `npm install`
+- wykonać `npm run dev`
+- wyłączyć run dev używająć `'Ctrl+C'`
+- wykonać migrację bazy `php artisan migrate`
+
+### Uruchamianie
+
+- uruchomić dwie instancje terminala
+- w jednej wykonać `npm run dev`
+- w drugiej `php artisan serve`
+- w przeglądarce wejść na url `localhost:8000`
